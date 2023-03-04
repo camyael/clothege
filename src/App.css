@@ -1,8 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Shrikhand&display=swap');
+
+:root {
+  --primary-color: #702906;
+  --background-color: #C2C1AE;
+  --color-whitenowhite: #EBEAE0;
+
+  --font-logotipos: 'Shrikhand', cursive;
+  --font-normal: 'Josefin Sans', sans-serif;
+
+  --font-size: 1.3rem
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  background-color: #C2C1AE;
+  background-color: var(--background-color);
   text-align: center;
+  max-width: 100vw;
+  font-family: var(--font-normal);
 }
 
 nav {
@@ -11,7 +29,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   padding: 15px 0;
-  border-bottom: 2px solid #702906;
+  border-bottom: 2px solid var(--primary-color);
   width: 90%;
   margin: 0 auto
 }
@@ -28,30 +46,13 @@ nav div img {
 }
 
 #logo-navbar {
-  font-family: 'Shrikhand', cursive;
-  color: #702906
+  font-family: var(--font-logotipos);
+  color: var(--primary-color);
 }
 
 a, h1, h2 {
-  color: #5e275e;
+  color: var(--primary-color);
   text-decoration: none;
-}
-
-form {
-  margin-top: 40px;
-}
-
-form input {
-  border: none;
-  border-radius: 10px;
-}
-
-form button {
-  background-color: #514151;
-  border: #eaccea;
-  border-radius: 10px;
-  padding: 8px 16px;
-  color: #eaccea;
 }
 
 /* --------------------HOME */
@@ -63,15 +64,15 @@ form button {
   position: relative;
   padding: 110px 0;
   width: 100%;
-  height: 55vh;
-  max-height: 55vh;
+  height: 80vh;
+  max-height: 80vh;
 }
 
 .Home-design-logo {
   position: absolute;
   font-size: 12rem;
   letter-spacing: 14.8px;
-  font-family: 'Shrikhand', cursive;
+  font-family: var(--font-logotipos);
   left: 0;
   right: 0;
   margin-left: auto;
@@ -80,18 +81,18 @@ form button {
 }
 
 .logo-first {
-  top: -150px;
+  top: 100px;
   -webkit-text-stroke: 7px #702906bd;
 }
 
 .logo-second {
-  top: -300px;
-  -webkit-text-stroke: 7px #EBEAE0;
+  top: -50px;
+  -webkit-text-stroke: 7px var(--color-whitenowhite);
 }
 
 .logo-third {
-  top: 0px;
-  -webkit-text-stroke: 7px #EBEAE0;
+  bottom: 200px;
+  -webkit-text-stroke: 7px var(--color-whitenowhite);
 }
 
 .nike-home {
@@ -119,47 +120,236 @@ form button {
 
 .Home-design-button {
   position: absolute;
-  right: 10px;
-  bottom: 0;
+  font-size: var(--font-size);
+  right: 50px;
+  bottom: 200px;
+  padding: 8px 30px;
+  background-color: var(--color-whitenowhite);
+  border-radius: 10px;
+  transition: .4s ease-in;
 }
 
-.secion-dos {
-  background-color: #702906;
-  width: 100%;
+.Home-design-button:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  transform: scale(1.1);
+  filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.5));
+}
+
+.design-decades {
+  margin-top: -150px;
+  background-color: var(--color-whitenowhite);
+}
+
+.design-decades .years {
+  color: transparent;
+  -webkit-text-stroke: 7px #DEB095;
+  font-size: 10rem;
+  letter-spacing: 14.8px;
+  font-family: var(--font-logotipos);
+  background-color: var(--primary-color);
+  white-space: nowrap;
+}
+
+.design-decades .old-eras {
+  width: 300px;
   height: 300px;
-}
-
-#productos-tiemporeal {
-  text-align: center;
-}
-
-#productos-tiemporeal div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 10px;
-}
-
-.span-email {
-  color: blue;
-  font-weight: bolder;
-}
-
-.span-fecha {
-  color: brown;
-}
-
-.span-mensaje {
-  color: green;
-  font-style: italic;
-}
-
-#session a {
+  background-color: var(--background-color);
+  border-radius: 50%;
+  margin: 170px auto;
+  color: var(--primary-color);
+  font-size: var(--font-size);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#session img {
-  width: 50px;
+.design-decades img {
+  padding-bottom: 30px;
+  padding-right: 30px;
+  width: 80%;
+  border-bottom: 3px solid var(--primary-color);
+  border-right: 3px solid var(--primary-color);
+}
+
+.design-decades div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  padding: 100px 0;
+}
+
+.design-decades div img {
+  width: 500px;
+  border-bottom: none;
+  border-right: none;
+  padding-right: 0;
+}
+
+/* --------------- PRODUCTOS */
+#products-list  {
+  background-color: var(--background-color);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 30px;
+  max-width: 100%;
+  margin-bottom: 100px;
+}
+
+.prod-item {
+  position: relative;
+  width: 250px;
+  max-width: 300px;
+  margin: 0px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-right-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px 10px;
+  background-color: var(--color-whitenowhite);
+}
+
+.prod-item-img img {
+  width: 100%;
+  height: auto;
+  transform: rotate(-20deg);
+  margin-bottom: 35px;
+  filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.5));
+}
+
+.prod-item:nth-child(3) img {
+  width: 90%;
+}
+
+.prod-item-title {
+  text-align: left;
+  font-size: 0.9rem;
+  padding-top: 10px;
+}
+
+.prod-item > .prod-item-img {
+  position: relative;
+  height: 170px;
+}
+
+.prod-item > .prod-item-img > span {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  background-color: #702906bd;
+  border-radius: 50%;
+}
+
+.prod-item .prod-item-vermas {
+  padding: 5px 30px;
+  border: 2px solid var(--primary-color);
+  border-radius: 3px;
+}
+
+.prod-item .prod-item-vermas:hover {
+  background-color: var(--primary-color);
+  color: var(--color-whitenowhite);
+}
+
+.prod-item > .prod-item-text > div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  padding-top: 10px;
+}
+
+.prod-item .prod-item-title {
+  width: 100%;
+}
+
+.itemDetail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var();
+}
+
+.section-title {
+  margin: 40px 0;
+}
+
+/* ------------- REGISTER */
+
+.register-form, .login-form {
+  width: 30%;
+  margin: 50px auto 200px;
+  padding: 4px 0 30px 0;
+  background-color: var(--color-whitenowhite);
+  box-shadow: rgba(0, 0, 0, 0.4) 1px 2px 2px;
+}
+
+.register-form > form, .login-form > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-form form > input, .login-form form > input {
+  padding: 10px 0;
+  width: 70%;
+  border: none;
+  font-family: var(--font-normal);
+  background-color: transparent;
+  border-bottom: 2px solid var(--primary-color);
+  margin: 5px 0;
+}
+
+.register-form form > input:focus, .login-form form > input:focus{
+  outline: 0;
+}
+
+.register-form form > .register-form-submit, .login-form form > .login-form-submit {
+  border-bottom: none;
+  cursor: pointer;
+  width: 70%;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 8px 16px;
+  margin: 20px 0;
+}
+
+.register-form form > .register-form-submit:hover, .login-form form > .login-form-submit:hover {
+  background-color: var(--primary-color);
+  color: var(--color-whitenowhite);
+}
+
+/* ---------- PROFILE */
+.section-profile-card {
+  width: 200px;
+  height: 254px;
+  background: #f5f5f5;
+  padding: 2rem 1.5rem;
+  transition: box-shadow .3s ease, transform .2s ease;
+  margin: auto auto;
+  border-radius: 8px;
+}
+
+.section-profile-card:hover {
+  box-shadow: 0 8px 50px #23232333;
+}
+
+.section-profile-card img {
+  width: 90px;
+  border-radius: 50%;
+}
+
+#footer {
+  background-color: var(--primary-color);
+  height: 100%;
 }

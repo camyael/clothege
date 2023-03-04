@@ -12,11 +12,11 @@ const CartContextProvider = ( ({children} ) => {
             const index = cart.findIndex(prod => prod.product._id === product._id);
             cart[index].count = cart[index].count + count;
             setItem('cart', JSON.stringify(cart))
-            setTimeout(window.location.replace('/'), 2000)
+            setTimeout(window.location.replace('/products'), 2000)
         } else {
             if(cart !== null && cart.length > 0) setItem('cart', JSON.stringify([...cart, {product, count}]))
             else setItem('cart', JSON.stringify([{product, count}]))
-            setTimeout(window.location.replace('/'), 2000)
+            setTimeout(window.location.replace('/products'), 2000)
         }
     }
 

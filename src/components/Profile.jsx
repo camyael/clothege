@@ -28,17 +28,15 @@ const Profile = () => {
     return (
         <>
         <Navbar/>
-        <div>
+        <div className="section-profile">
+            <h2 className="section-title">Perfil</h2>
             {
                 user !== null
-                ? <div>
-                    <p>Perfil</p>
-                    <br/>
+                ? <div className="section-profile-card">
                     <img src={user.user.image} alt="user-profile"/>
                     <p>Nombre: {user.user.fullname}</p>
                     <p>Email: {user.user.mail}</p>
                     <p>Télefono: {user.user.phoneNumber}</p>
-
                     <input type="submit" className="botton-logout" value={"Cerrar sesion"} onClick={handleLogout}/>
                 </div>
                 :   <p>No existe el perfil</p>

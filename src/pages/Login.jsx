@@ -42,18 +42,16 @@ const Login = () => {
             <Navbar/>
             {
                 user === null 
-                ? <div>
-                    <h1>Inicio de sesion</h1>
+                ? <div className="login-form">
+                    <h2 className="section-title">inicio de sesión</h2>
 
                     <form id="formLogIn" onSubmit={submit}>
-                        <label>Email</label>
-                        <input name="mail" value={mail} onChange={e => setMail(e.target.value)}/>
-                        <label>Contraseña</label>
-                        <input type="text" value={password} onChange={e => setPassword(e.target.value)}/>
-                        <button>Enviar</button>
+                        <input name="mail" placeholder="mail" value={mail} onChange={e => setMail(e.target.value)}/>
+                        <input type="text" placeholder="contraseña" value={password} onChange={e => setPassword(e.target.value)}/>
+                        <input type="submit" className="login-form-submit" value="iniciar sesión"/>
                     </form>
-                    <a href="/passportrequestrestore">Olvidaste la contraseña?</a>
-                    <p>no tienes una cuenta? Entonces <a href="/register">registrate!</a></p>
+                    <a href="/passportrequestrestore">olvidaste la contraseña?</a>
+                    <p>no tienes una cuenta? entonces <a href="/register">registrate!</a></p>
                 </div>
                 : <p>Ya te registraste</p>
             }

@@ -24,16 +24,25 @@ const ProductsList = () => {
 
     return (
         <>  
-        <Navbar/>
-        <div>
-            {products.map(prod => 
-                <div key={prod._id}>
-                    <p>Producto: {prod.title}, precio: ${prod.price}, id: {prod._id}</p>
-                    <img src={prod.image} alt={prod.title}/>
-                    <a href={`/products/${prod._id}`}>Ver más</a>
-                </div>
-            )}
-        </div>
+            <Navbar/>
+            <h2 className="section-title">productos</h2>
+            <div id="products-list">
+                {products.map(prod => 
+                    <div className="prod-item" key={prod._id}>
+                        <div className="prod-item-img">
+                            <span></span>
+                            <img src={prod.image} alt={prod.title}/>
+                        </div>
+                        <div className="prod-item-text">
+                            <p className="prod-item-title">{prod.title}</p>
+                            <div>
+                                <p>${prod.price}</p>
+                                <a href={`/products/${prod._id}`} className="prod-item-vermas">ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </div>
         </>
     )
 }

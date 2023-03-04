@@ -19,6 +19,7 @@ const Navbar = () => {
             <a href="/" id="logo-navbar">clothege</a>
             <a href="/products">productos</a>
             <a href="/cart">carrito { count !== null && <span>{count}</span>}</a>
+            {user && user.user.role === 'admin' && <a href="/createproducts">crear productos</a>}
             <div>
                 {
                     user && user.user.role === 'user'
@@ -31,7 +32,6 @@ const Navbar = () => {
                     : <a href="/login">iniciar sesión</a>
                 }
             </div>
-            {user && user.user.role === 'admin' && <a href="/createproducts">crear productos</a>}
         </nav>
     )
 }

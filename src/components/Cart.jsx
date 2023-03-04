@@ -43,6 +43,7 @@ const Cart = () => {
             {
                 cartItem.length > 0
                 ? <div>
+                    <h2 className="section-title">Carrito</h2>
                     {
                         cartItem.map((prod) => {
                             return (

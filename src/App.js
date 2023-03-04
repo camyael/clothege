@@ -13,10 +13,18 @@ const Cart = React.lazy(() => import('./components/Cart'))
 const Profile = React.lazy(() => import('./components/Profile'))
 const PassportRestore = React.lazy(() => import('./components/PassportRestore'))
 const RestorePassport = React.lazy(() => import('./components/RestorePassport'))
+const CreateProducts = React.lazy(() => import('./components/CreateProducts'))
+const Footer = React.lazy(() => import('./components/Footer'))
 
 const user = (element) => {
-  const result = getItem('user')
+  const result = JSON.parse(getItem('user'))
   if(!result) return <Navigate to='/login'/>
+  return element
+}
+
+const admin = (element) => {
+  const result = JSON.parse(getItem('user'))
+  if(!result || result.user.role !== "admin") return <Navigate to='/products'/>
   return element
 }
 
@@ -30,12 +38,14 @@ function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/products' element={ user(<ProductsList/>)} />
             <Route path='/products/:id' element={ user(<Product/>) }/>
+            <Route path='/createproducts' element={ admin(<CreateProducts/>)}/>
             <Route path='/cart' element={ user(<Cart/>) }/>
             <Route path='/profile' element={ user(<Profile/>)}/>
             <Route path='/passportrequestrestore' element={<PassportRestore/>}/>
             <Route path='/restorepassport' element={<RestorePassport/>}/>
             <Route path='/*' element={<Navigate to='/'/>}/>
           </Routes>
+          <Footer/>
       </CartContextProvider>
     </Suspense>
   );

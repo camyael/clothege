@@ -57,42 +57,31 @@ const Register = () => {
 
     return(
         <>
-        <Navbar/>
-        <div>
+            <Navbar/>
             {
                 user === null
-                ? <div>
-                    <h1>Registro</h1>
-
+                ? <div className="register-form">
+                    <h2 className="section-title">registro</h2>
                     <form id="formSignIn" onSubmit={handleRegister}>
-                        <label>Nombre</label>
-                        <input type="text" name="first_name" value={values.first_name} onChange={handleInputChange}/>
-                        <label>Apellido</label>
-                        <input type="text" name="last_name" value={values.last_name} onChange={handleInputChange}/>
-                        <br/>
-                        <label>Email</label>
-                        <input type="text" name="mail" value={values.mail} onChange={handleInputChange}/>
-                        <br/>
-                        <label>Número de télefono</label>
-                        <input type="number" name="phoneNumber" value={values.phoneNumber} onChange={handleInputChange}/>
-                        <br/>
-                        <label>Contraseña</label>
-                        <input name="password" value={values.password} onChange={handleInputChange}/>
-                        <br/>
-                        <label>Foto de perfil</label>
-                        <input type="file" name="image" onChange={handleInputChangeFile}/>
-                        <br/>
-                        <input type="submit" value="Registrarse"/>
+                        <input type="text" name="first_name" placeholder="nombre" value={values.first_name} onChange={handleInputChange}/>
+                        <input type="text" name="last_name" placeholder="apellido" value={values.last_name} onChange={handleInputChange}/>
+                        <input type="text" name="mail" placeholder="mail" value={values.mail} onChange={handleInputChange}/>
+                        <input type="number" name="phoneNumber" placeholder="número de teléfono" value={values.phoneNumber} onChange={handleInputChange}/>
+                        <input name="password" value={values.password} placeholder="contraseña" onChange={handleInputChange}/>
+                        <div>
+                            <label>foto de perfil</label>
+                            <input type="file" name="image" onChange={handleInputChangeFile}/>
+                        </div>
+                        <input type="submit" className="register-form-submit" value="registrarse"/>
                     </form>
 
-                    <p>ya tienes una cuenta? <a href="/login">Inicia sesion!</a></p>
+                    <p>ya tienes una cuenta? <a href="/login">inicia sesion!</a></p>
                 </div>
                 : <div>
                     <p>Ya te registraste, vuelve a la tienda</p>
                     <a href="/">Ir al inicio</a>
                 </div>
             }
-        </div>
         </>
     )
 }

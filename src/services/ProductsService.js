@@ -22,4 +22,14 @@ export default class ProductsService {
         }
         this.client.getRequest(reqInfo)
     }
+
+    createProduct = ({body, callbackSuccess, callbackError}) => {
+        const reqInfo = {
+            url: `${process.env.REACT_APP_URL_BACKEND}/api/products`,
+            body: body,
+            callbackSuccess,
+            callbackError
+        }
+        this.client.postRequest(reqInfo)
+    }
 }
