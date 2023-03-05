@@ -53,7 +53,7 @@ const Profile = () => {
             {
                 user !== null
                 ? <div className="section-profile-card">
-                    <img src={user.user.image} alt="user-profile"/>
+                    <img src={`${process.env.REACT_APP_URL_BACKEND}${user.user.image}`} alt="user-profile"/>
                     <p>{user.user.fullname}</p>
                     <p>Email: {user.user.mail}</p>
                     <p>Télefono: ${user.user.phoneNumber}</p>
