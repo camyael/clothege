@@ -40,7 +40,7 @@ const Home = () => {
                         <div className="prod-item" key={prod._id}>
                             <div className="prod-item-img">
                                 <span></span>
-                                <img src={prod.image} alt={prod.title}/>
+                                <img src={`${process.env.REACT_APP_URL_BACKEND}${prod.image}`} alt={prod.title}/>
                             </div>
                             <div className="prod-item-text">
                                 <p className="prod-item-title">{prod.title}</p>
