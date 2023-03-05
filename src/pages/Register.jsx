@@ -56,7 +56,7 @@ const Register = () => {
     }
 
     return(
-        <>
+        <div className="content-size">
             <Navbar/>
             {
                 user === null
@@ -82,7 +82,7 @@ const Register = () => {
                     <a href="/">Ir al inicio</a>
                 </div>
             }
-        </>
+        </div>
     )
 }
 
