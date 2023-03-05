@@ -72,7 +72,7 @@ const Register = () => {
                             <label>foto de perfil</label>
                             <input type="file" name="image" onChange={handleInputChangeFile}/>
                         </div>
-                        <input type="submit" className="register-form-submit" value="registrarse"/>
+                        <button className="register-form-submit">registrarse</button>
                     </form>
 
                     <p>ya tienes una cuenta? <a href="/login">inicia sesion!</a></p>

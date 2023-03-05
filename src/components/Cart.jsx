@@ -37,30 +37,38 @@ const Cart = () => {
     }
     
     return(
-        <>
+        <div className="content-size">
         <Navbar/>
         <div>
+            <h2 className="section-title">Carrito</h2>
             {
                 cartItem.length > 0
-                ? <div>
-                    <h2 className="section-title">Carrito</h2>
+                ? <div id="cart-itemlist">
+                    <div className="cart-items">
                     {
                         cartItem.map((prod) => {
                             return (
-                                <div key={prod.product._id}>
-                                    <p>{prod.count}</p>
-                                    <p>{prod.product._id}</p>
+                                <div key={prod.product._id} className="cart-item">
+                                    <img src={`${process.env.REACT_APP_URL_BACKEND}${prod.product.image}`} alt={prod.product.title} />
+                                    <div>
+                                        <p>{prod.product.title}</p>
+                                        <p>cantidad: {prod.count}</p>
+                                    </div>
+                                    <p>${prod.product.price}</p>
                                 </div>
                             )
                         })
                     }
-                    <button onClick={handleOrder}>Finalizar Compra</button>
-                    <button onClick={() => clearCart()}>Vaciar carrito</button>
+                    </div>
+                    <div className="cart-checkout">
+                        <button className="finalize-cart" onClick={handleOrder}>Finalizar Compra</button>
+                        <button className="empty-cart" onClick={() => clearCart()}>Vaciar carrito</button>
+                    </div>
                 </div>
                 : <p>El carrito esta vacio</p>
             }
         </div>
-        </>
+        </div>
     )
 }
 

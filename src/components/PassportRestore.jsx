@@ -26,12 +26,13 @@ const PassportRequestRestore = () => {
     }
 
     return (
-        <>
-            <form onSubmit={sendMailRestore}>
-                <input type="text" name="mail" value={mail} onChange={e => setMail(e.target.value)}/>
-                <input type="submit"/>
+        <div className="content-size">
+            <form className="mailRestore" onSubmit={sendMailRestore}>
+                <h2>Restaurar contraseña</h2>
+                <input type="text" placeholder="mail" name="mail" value={mail} onChange={e => setMail(e.target.value)}/>
+                <input type="submit" className="mailRestore-submit"/>
             </form>
-        </>
+        </div>
     )
 }
 

@@ -18,4 +18,10 @@ export default class AxiosClient {
         .then(callbackSuccess)
         .catch(callbackError)
     }
+
+    deleteRequest = ({url, callbackSuccess, callbackError}) => {
+        axios.delete(url)
+        .then(callbackSuccess)
+        .catch(callbackError)
+    }
 }

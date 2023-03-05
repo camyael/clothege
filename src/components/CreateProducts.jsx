@@ -45,7 +45,7 @@ const CreateProducts = () => {
     }
 
     return (
-        <>
+        <div className="content-size">
         <Navbar/>
             <h2 className="section-title">crear productos</h2>
             <form onSubmit={e => handleCreateProduct(e)}>
@@ -56,7 +56,7 @@ const CreateProducts = () => {
                 <input type="file" name="image" onChange={e => setFile(e.target.files[0])}/>
                 <input type="submit"/>
             </form>
-        </>
+        </div>
     )
 }
 

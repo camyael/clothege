@@ -31,11 +31,13 @@ const RestorePassword = () => {
     }
 
     return (
-        <form onSubmit={newPassword}>
-            <h2>Nueva contraseña</h2>
-            <input type="text" value={password} onChange={e => setPassword(e.target.value)}/>
-            <input type="submit"/>
-        </form>
+        <div className='content-size'>
+            <form onSubmit={newPassword} className="mailRestore">
+                <h2>Nueva contraseña</h2>
+                <input type="text" placeholder="nueva contraseña" value={password} onChange={e => setPassword(e.target.value)}/>
+                <input type="submit" className='mailRestore-submit'/>
+            </form>
+        </div>
     )
 }
 

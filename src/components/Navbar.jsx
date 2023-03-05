@@ -18,12 +18,12 @@ const Navbar = () => {
         <nav>
             <a href="/" id="logo-navbar">clothege</a>
             <a href="/products">productos</a>
-            <a href="/cart">carrito { count !== null && <span>{count}</span>}</a>
+            <a href="/cart">carrito { count !== null && <span className="span-cart-count">{count}</span>}</a>
             {user && user.user.role === 'admin' && <a href="/createproducts">crear productos</a>}
             <div>
                 {
                     user && user.user.role === 'user'
-                    ? <img src={user.user.image} alt="user-icon"/>
+                    ? <img src={`${process.env.REACT_APP_URL_BACKEND}${user.user.image}`} alt="user-icon"/>
                     : <img src={`${process.env.REACT_APP_URL_BACKEND}/images/ecommerce/icon-usuario.png`} alt="user-icon"/>
                 }
                 {

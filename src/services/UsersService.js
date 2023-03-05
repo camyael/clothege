@@ -55,4 +55,13 @@ export default class UsersService {
         }
         this.client.getRequest(reqInfo)
     }
+
+    deleteAccount = ({url, callbackSuccess, callbackError}) => {
+        const reqInfo = {
+            url: `${process.env.REACT_APP_URL_BACKEND}/api/deleteaccount/${url}`,
+            callbackSuccess,
+            callbackError
+        }
+        this.client.deleteRequest(reqInfo)
+    }
 }

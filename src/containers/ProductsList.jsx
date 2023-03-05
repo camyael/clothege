@@ -23,7 +23,7 @@ const ProductsList = () => {
     }, [setProducts])
 
     return (
-        <>  
+        <div className="content-size">  
             <Navbar/>
             <h2 className="section-title">productos</h2>
             <div id="products-list">
@@ -31,7 +31,7 @@ const ProductsList = () => {
                     <div className="prod-item" key={prod._id}>
                         <div className="prod-item-img">
                             <span></span>
-                            <img src={prod.image} alt={prod.title}/>
+                            <img src={`${process.env.REACT_APP_URL_BACKEND}${prod.image}`} alt={prod.title}/>
                         </div>
                         <div className="prod-item-text">
                             <p className="prod-item-title">{prod.title}</p>
@@ -43,7 +43,7 @@ const ProductsList = () => {
                     </div>
                 )}
             </div>
-        </>
+        </div>
     )
 }
 

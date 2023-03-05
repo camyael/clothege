@@ -42,31 +42,37 @@ const Product = () => {
     const incart = isInCart(product._id)
 
     return (
-        <>
+        <div className="content-size">
             <Navbar/>
             <div className="itemDetail">
                 <div className="itemDetail-img">
-                    <img src={product.image} alt={product.title}/>
+                    <span></span>
+                    <img src={`${process.env.REACT_APP_URL_BACKEND}${product.image}`} alt={product.title}/>
                 </div>
                 <div className="itemDetail-info">
-                    <h3>{product.title}</h3>
-                    <p>Precio {product.price} </p>
-                    <p>Descripción {product.description} </p>
+                    <div>
+                        <p>{product.brand}</p>
+                        <h3>{product.title}</h3>
+                    </div>
+                    <p>${product.price} </p>
+                    <p>{product.description} </p>
                     {
                         incart === false
                         ? <div className="itemCount">
-                            <button id="reduceCount" onClick={reduceCount}>-</button>
-                            <span id="span-count">{count}</span>
-                            <button className="addToCount" onClick={addToCount}>+</button>
-                            <button id="itemFormCount" onClick={() => addToCart(product, count)}>Enviar</button>
+                            <div>
+                                <button className="reduceCount" onClick={reduceCount}>-</button>
+                                <span className="span-count">{count}</span>
+                                <button className="addToCount" onClick={addToCount}>+</button>
+                            </div>
+                            <button id="itemFormCount" onClick={() => addToCart(product, count)}>agregar al carrito</button>
                         </div>
-                        : <a href="/cart">Ir al carrito</a>
+                        : <a href="/cart">ir al carrito</a>
                     }
-                    <p>Stock: {product.stock}</p>
-                    <a href="/products">Volver</a> 
+                    <p>stock: {product.stock}</p>
+                    <a href="/products">volver</a> 
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
