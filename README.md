@@ -31,9 +31,9 @@ $ git clone https://github.com/camyael/clothege.git
 
 Antes de iniciar el proyecto, primero debes crear un archivo .env con una variable de entorno a la altura de la carpeta src.
 
-````
+```env
 REACT_APP_URL_BACKEND = http://localhost:8080
-````
+```
 
 
 Para instalar las dependencias, en el directorio del proyecto ejecute: 
