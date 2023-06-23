@@ -35,5 +35,7 @@ $ npm install
 $ npm start
 ````
 
+La parte de [backend](https://github.com/camyael/api-ecommerce) también debe ejecutarse al mismo tiempo.
+
 ## Autor
 * Camila Villaverde — [LinkedIn](https://www.linkedin.com/in/camilavillaverde/) y [Portfolio](https://camyael.github.io/portfolio/)
